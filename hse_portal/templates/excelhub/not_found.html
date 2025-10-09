@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excel introuvable • Portail HSE OCP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --ocp-green: #00A859;
+      --ocp-dark: #007A40;
+      --ocp-bg: #E9F7EF;
+      --ocp-text: #1B2223;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center bg-[var(--ocp-bg)] text-[var(--ocp-text)]">
+  <div class="bg-white rounded-2xl shadow-lg p-8 max-w-lg w-full border border-gray-100 text-center">
+    <h1 class="text-2xl font-bold text-[var(--ocp-dark)] mb-3">Aucun fichier pour cette date</h1>
+    <p class="text-gray-700 mb-6">
+      Aucun fichier Excel n’existe pour la date <strong>{{ date_requested }}</strong>.<br />
+      Sélectionnez une autre date disponible ci-dessous.
+    </p>
+
+    <ul class="text-left text-sm space-y-2">
+      {% for d in dates %}
+      <li>
+        <a href="/excel/{{ d|date:'Y-m-d' }}/"
+           class="block px-4 py-2 bg-[var(--ocp-green)]/10 text-[var(--ocp-dark)] rounded-lg hover:bg-[var(--ocp-green)]/20">
+          📅 {{ d }}
+        </a>
+      </li>
+      {% empty %}
+      <li class="text-gray-500">Aucune date disponible.</li>
+      {% endfor %}
+    </ul>
+
+    <div class="mt-6">
+      <a href="/dashboard/"
+         class="inline-block px-5 py-2 rounded-lg text-white font-semibold shadow-md"
+         style="background: linear-gradient(90deg, var(--ocp-green), var(--ocp-dark));">
+        ⬅ Retour au tableau de bord
+      </a>
+    </div>
+  </div>
+
+  <footer class="mt-10 text-center text-xs text-gray-500">
+    © {{ now|date:"Y" }} OCP – Portail interne HSE
+  </footer>
+</body>
+</html>

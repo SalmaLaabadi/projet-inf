@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tableau de bord • Portail HSE OCP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --ocp-green: #00A859;
+      --ocp-dark: #007A40;
+      --ocp-bg: #E9F7EF;
+      --ocp-text: #1B2223;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[var(--ocp-bg)] text-[var(--ocp-text)]">
+  <!-- Barre de navigation -->
+  <nav class="bg-white shadow-lg p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-full flex items-center justify-center"
+        style="background: radial-gradient(circle at 30% 30%, var(--ocp-green) 0%, var(--ocp-dark) 100%);">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.5 3.5c-6.5.6-11 5.1-12.7 11.5-.2.7.5 1.3 1.2 1 3.1-1.2 6.2-3.6 8.9-7.2-.7 2.6-2.2 5.5-4.7 8.6-.5.6 0 1.6.8 1.6 5.3 0 8.5-4.5 8.5-10.5 0-1.6-.7-3.2-2-4.5Z"/>
+        </svg>
+      </div>
+      <h1 class="font-bold text-xl text-[var(--ocp-dark)]">Portail HSE OCP</h1>
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="/excel/" class="text-sm text-[var(--ocp-dark)] hover:text-[var(--ocp-green)] font-semibold">📊 Fichiers Excel</a>
+      <a href="/accounts/logout/" class="text-sm text-red-600 font-medium hover:underline">Déconnexion</a>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <main class="p-8">
+    <h2 class="text-2xl font-bold mb-4">Bienvenue sur votre tableau de bord</h2>
+    <p class="text-gray-700 mb-6">
+      Ce portail vous permet de gérer les <strong>formations HSE</strong>, les <strong>tests</strong>,
+      et les <strong>certificats</strong> de vos collaborateurs en toute simplicité.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Carte 1 -->
+      <a href="/excel/" class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1 border-l-4 border-[var(--ocp-green)]">
+        <h3 class="font-semibold text-lg mb-2 text-[var(--ocp-dark)]">📂 Gestion des fichiers Excel</h3>
+        <p class="text-sm text-gray-600">Importer, modifier ou consulter les fichiers Excel du jour et de l’historique.</p>
+      </a>
+
+      <!-- Carte 2 -->
+      <a href="#" class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1 border-l-4 border-[var(--ocp-dark)]">
+        <h3 class="font-semibold text-lg mb-2 text-[var(--ocp-dark)]">🧾 Gestion des tests HSE</h3>
+        <p class="text-sm text-gray-600">Lancer les tests, générer les QR Codes et suivre les résultats.</p>
+      </a>
+
+      <!-- Carte 3 -->
+      <a href="#" class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1 border-l-4 border-[var(--ocp-green)]">
+        <h3 class="font-semibold text-lg mb-2 text-[var(--ocp-dark)]">🎓 Certifications & Diplômes</h3>
+        <p class="text-sm text-gray-600">Générer les attestations et certificats pour les candidats aptes.</p>
+      </a>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="mt-10 text-center text-xs text-gray-500 py-4">
+    © {{ now|date:"Y" }} OCP – Portail interne HSE. Tous droits réservés.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aucun fichier • Portail HSE OCP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --ocp-green: #00A859;
+      --ocp-dark: #007A40;
+      --ocp-bg: #E9F7EF;
+      --ocp-text: #1B2223;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[var(--ocp-bg)] flex flex-col items-center justify-center text-[var(--ocp-text)]">
+  <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center max-w-lg w-full">
+    <div class="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
+         style="background: radial-gradient(circle at 30% 30%, var(--ocp-green) 0%, var(--ocp-dark) 100%);">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+           stroke="white" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+      </svg>
+    </div>
+
+    <h1 class="text-2xl font-bold mb-3 text-[var(--ocp-dark)]">Aucun fichier Excel disponible</h1>
+    <p class="text-gray-600 mb-6">
+      Aucun fichier n’a encore été importé ou créé.<br>
+      Vous pouvez déposer un fichier Excel depuis le tableau de bord pour commencer.
+    </p>
+
+    <a href="/dashboard/"
+       class="inline-block px-5 py-2 rounded-lg text-white font-semibold shadow-md"
+       style="background: linear-gradient(90deg, var(--ocp-green), var(--ocp-dark));">
+       ⬅ Retour au tableau de bord
+    </a>
+  </div>
+
+  <footer class="mt-10 text-center text-xs text-gray-500">
+    © {{ now|date:"Y" }} OCP – Portail interne HSE
+  </footer>
+</body>
+</html>
